@@ -1,0 +1,328 @@
+\documentclass[10pt,a4paper]{article}
+
+% Packages
+\usepackage{fancyhdr}           % For header and footer
+\usepackage{multicol}           % Allows multicols in tables
+\usepackage{tabularx}           % Intelligent column widths
+\usepackage{tabulary}           % Used in header and footer
+\usepackage{hhline}             % Border under tables
+\usepackage{graphicx}           % For images
+\usepackage{xcolor}             % For hex colours
+%\usepackage[utf8x]{inputenc}    % For unicode character support
+\usepackage[T1]{fontenc}        % Without this we get weird character replacements
+\usepackage{colortbl}           % For coloured tables
+\usepackage{setspace}           % For line height
+\usepackage{lastpage}           % Needed for total page number
+\usepackage{seqsplit}           % Splits long words.
+%\usepackage{opensans}          % Can't make this work so far. Shame. Would be lovely.
+\usepackage[normalem]{ulem}     % For underlining links
+% Most of the following are not required for the majority
+% of cheat sheets but are needed for some symbol support.
+\usepackage{amsmath}            % Symbols
+\usepackage{MnSymbol}           % Symbols
+\usepackage{wasysym}            % Symbols
+%\usepackage[english,german,french,spanish,italian]{babel}              % Languages
+
+% Document Info
+\author{emmajane}
+\pdfinfo{
+  /Title (drupal-6-theme-variables.pdf)
+  /Creator (Cheatography)
+  /Author (emmajane)
+  /Subject (Conan Cheat Sheet)
+}
+
+% Lengths and widths
+\addtolength{\textwidth}{6cm}
+\addtolength{\textheight}{-1cm}
+\addtolength{\hoffset}{-3cm}
+\addtolength{\voffset}{-2cm}
+\setlength{\tabcolsep}{0.2cm} % Space between columns
+\setlength{\headsep}{-12pt} % Reduce space between header and content
+\setlength{\headheight}{85pt} % If less, LaTeX automatically increases it
+\renewcommand{\footrulewidth}{0pt} % Remove footer line
+\renewcommand{\headrulewidth}{0pt} % Remove header line
+\renewcommand{\seqinsert}{\ifmmode\allowbreak\else\-\fi} % Hyphens in seqsplit
+% This two commands together give roughly
+% the right line height in the tables
+\renewcommand{\arraystretch}{1.3}
+\onehalfspacing
+
+% Commands
+\newcommand{\SetRowColor}[1]{\noalign{\gdef\RowColorName{#1}}\rowcolor{\RowColorName}} % Shortcut for row colour
+\newcommand{\mymulticolumn}[3]{\multicolumn{#1}{>{\columncolor{\RowColorName}}#2}{#3}} % For coloured multi-cols
+\newcolumntype{x}[1]{>{\raggedright}p{#1}} % New column types for ragged-right paragraph columns
+\newcommand{\tn}{\tabularnewline} % Required as custom column type in use
+
+% Font and Colours
+\definecolor{HeadBackground}{HTML}{333333}
+\definecolor{FootBackground}{HTML}{666666}
+\definecolor{TextColor}{HTML}{333333}
+\definecolor{DarkBackground}{HTML}{FA9400}
+\definecolor{LightBackground}{HTML}{DFEBFF}
+\renewcommand{\familydefault}{\sfdefault}
+\color{TextColor}
+
+% Header and Footer
+\pagestyle{fancy}
+\fancyhead{} % Set header to blank
+\fancyfoot{} % Set footer to blank
+\fancyhead[L]{
+\noindent
+\begin{multicols}{3}
+%\begin{tabulary}{5.8cm}{C}
+%    \SetRowColor{DarkBackground}
+%    \vspace{-7pt}
+%    {\parbox{\dimexpr\textwidth-2\fboxsep\relax}{\noindent
+%        \hspace*{-6pt}\includegraphics[width=5.8cm]{/web/www.cheatography.com/public/images/cheatography_logo.pdf}}
+%    }
+%\end{tabulary}
+\columnbreak
+\begin{tabulary}{11cm}{L}
+    \vspace{-2pt}\large{\bf{\textcolor{DarkBackground}{\textrm{Conan Cheat Sheet}}}}
+\end{tabulary}
+\end{multicols}}
+
+\fancyfoot[L]{ \footnotesize
+\noindent
+\begin{multicols}{3}
+\begin{tabulary}{5.8cm}{LL}
+  \SetRowColor{FootBackground}
+  \mymulticolumn{2}{p{5.377cm}}{\bf\textcolor{white}{Cheatographer}}  \\
+  \vspace{-2pt}emmajane \\
+  \uline{cheatography.com/emmajane} \\
+  \end{tabulary}
+\vfill
+\columnbreak
+\begin{tabulary}{5.8cm}{L}
+  \SetRowColor{FootBackground}
+  \mymulticolumn{1}{p{5.377cm}}{\bf\textcolor{white}{Cheat Sheet}}  \\
+   \vspace{-2pt}Published 27th January, 2012.\\
+   Updated 2nd June, 2014.\\
+   Page {\thepage} of \pageref{LastPage}.
+\end{tabulary}
+\vfill
+\columnbreak
+\begin{tabulary}{5.8cm}{L}
+  \SetRowColor{FootBackground}
+  \mymulticolumn{1}{p{5.377cm}}{\bf\textcolor{white}{Sponsor}}  \\
+  \SetRowColor{white}
+  \vspace{-5pt}
+  %\includegraphics[width=48px,height=48px]{dave.jpeg}
+  Measure your website readability!\\
+  www.readability-score.com
+\end{tabulary}
+\end{multicols}}
+
+
+
+
+\begin{document}
+\raggedright
+\raggedcolumns
+
+% Set font size to small. Switch to any value
+% from this page to resize cheat sheet text:
+% www.emerson.emory.edu/services/latex/latex_169.html
+\footnotesize % Small font.
+
+\begin{multicols*}{3}
+
+\begin{tabularx}{5.377cm}{X}
+\SetRowColor{DarkBackground}
+\mymulticolumn{1}{x{5.377cm}}{\bf\textcolor{white}{Installation}}  \tn
+% Row 0
+\SetRowColor{LightBackground}
+\mymulticolumn{1}{x{5.377cm}}{{\bf{\$pip install conan}} Gets the conan python package.} \tn 
+% Row Count 2 (+ 2)
+% Row 1
+\SetRowColor{white}
+\mymulticolumn{1}{x{5.377cm}}{{\bf{\$site\_name}} The name of the site, empty when display has been disabled in theme settings.} \tn 
+% Row Count 4 (+ 2)
+% Row 2
+\SetRowColor{LightBackground}
+\mymulticolumn{1}{x{5.377cm}}{{\bf{\$site\_slogan}} The slogan of the site, empty when display has been disabled in theme settings.} \tn 
+% Row Count 6 (+ 2)
+% Row 3
+\SetRowColor{white}
+\mymulticolumn{1}{x{5.377cm}}{{\bf{\$mission}} The text of the site mission, empty when display has been disabled in theme settings.} \tn 
+% Row Count 8 (+ 2)
+% Row 4
+\SetRowColor{LightBackground}
+\mymulticolumn{1}{x{5.377cm}}{{\bf{\$search\_box}} HTML to display the search box, empty if search has been disabled.} \tn 
+% Row Count 10 (+ 2)
+% Row 5
+\SetRowColor{white}
+\mymulticolumn{1}{x{5.377cm}}{{\bf{\$primary\_links}} An array containing primary navigation links for the site, if they have been configured.} \tn 
+% Row Count 13 (+ 3)
+% Row 6
+\SetRowColor{LightBackground}
+\mymulticolumn{1}{x{5.377cm}}{{\bf{\$secondary\_links}} An array containing secondary navigation links for the site, if they have been configured.} \tn 
+% Row Count 16 (+ 3)
+% Row 7
+\SetRowColor{white}
+\mymulticolumn{1}{x{5.377cm}}{{\bf{\$left}} The HTML for the left sidebar.} \tn 
+% Row Count 17 (+ 1)
+% Row 8
+\SetRowColor{LightBackground}
+\mymulticolumn{1}{x{5.377cm}}{{\bf{\$breadcrumb}} The breadcrumb trail for the current page.} \tn 
+% Row Count 19 (+ 2)
+% Row 9
+\SetRowColor{white}
+\mymulticolumn{1}{x{5.377cm}}{{\bf{\$title}} The page title, for use in the actual HTML content.} \tn 
+% Row Count 21 (+ 2)
+% Row 10
+\SetRowColor{LightBackground}
+\mymulticolumn{1}{x{5.377cm}}{{\bf{\$help}} Dynamic help text, mostly for admin pages.} \tn 
+% Row Count 23 (+ 2)
+% Row 11
+\SetRowColor{white}
+\mymulticolumn{1}{x{5.377cm}}{{\bf{\$messages}} HTML for status and error messages. Should be displayed prominently.} \tn 
+% Row Count 25 (+ 2)
+% Row 12
+\SetRowColor{LightBackground}
+\mymulticolumn{1}{x{5.377cm}}{{\bf{\$tabs}} Tabs linking to any sub-pages beneath the current page (e.g., the view and edit tabs when displaying a node).} \tn 
+% Row Count 28 (+ 3)
+% Row 13
+\SetRowColor{white}
+\mymulticolumn{1}{x{5.377cm}}{{\bf{\$content}} The main content of the current Drupal page.} \tn 
+% Row Count 30 (+ 2)
+\end{tabularx}
+\par\addvspace{1.3em}
+
+\vfill
+\columnbreak
+\begin{tabularx}{5.377cm}{X}
+\SetRowColor{DarkBackground}
+\mymulticolumn{1}{x{5.377cm}}{\bf\textcolor{white}{page.tpl.php (cont)}}  \tn
+% Row 14
+\SetRowColor{LightBackground}
+\mymulticolumn{1}{x{5.377cm}}{{\bf{\$right}} The HTML for the right sidebar.} \tn 
+% Row Count 1 (+ 1)
+% Row 15
+\SetRowColor{white}
+\mymulticolumn{1}{x{5.377cm}}{{\bf{\$node}} The node template file.} \tn 
+% Row Count 2 (+ 1)
+% Row 16
+\SetRowColor{LightBackground}
+\mymulticolumn{1}{x{5.377cm}}{{\bf{\$feed\_icons}} A string of all feed icons for the current page.} \tn 
+% Row Count 4 (+ 2)
+% Row 17
+\SetRowColor{white}
+\mymulticolumn{1}{x{5.377cm}}{{\bf{\$footer\_message}} The footer message as defined in the admin settings.} \tn 
+% Row Count 6 (+ 2)
+% Row 18
+\SetRowColor{LightBackground}
+\mymulticolumn{1}{x{5.377cm}}{{\bf{\$footer}} The footer region.} \tn 
+% Row Count 7 (+ 1)
+\hhline{>{\arrayrulecolor{DarkBackground}}-}
+\SetRowColor{LightBackground}
+\mymulticolumn{1}{x{5.377cm}}{Version 6}  \tn 
+\hhline{>{\arrayrulecolor{DarkBackground}}-}
+\end{tabularx}
+\par\addvspace{1.3em}
+
+\begin{tabularx}{5.377cm}{X}
+\SetRowColor{DarkBackground}
+\mymulticolumn{1}{x{5.377cm}}{\bf\textcolor{white}{node.tpl.php}}  \tn
+% Row 0
+\SetRowColor{LightBackground}
+\mymulticolumn{1}{x{5.377cm}}{{\bf{\$title}} the (sanitized) title of the node.} \tn 
+% Row Count 1 (+ 1)
+% Row 1
+\SetRowColor{white}
+\mymulticolumn{1}{x{5.377cm}}{{\bf{\$content}} Hello World} \tn 
+% Row Count 6 (+ 5)
+% Row 2
+\SetRowColor{LightBackground}
+\mymulticolumn{1}{x{5.377cm}}{{\bf{\$picture}} The authors picture of the node.} \tn 
+% Row Count 7 (+ 1)
+% Row 3
+\SetRowColor{white}
+\mymulticolumn{1}{x{5.377cm}}{{\bf{\$date}} Formatted creation date.} \tn 
+% Row Count 8 (+ 1)
+% Row 4
+\SetRowColor{LightBackground}
+\mymulticolumn{1}{x{5.377cm}}{{\bf{\$links}} Themed links like "Read more", "Add new comment", etc.} \tn 
+% Row Count 10 (+ 2)
+% Row 5
+\SetRowColor{white}
+\mymulticolumn{1}{x{5.377cm}}{{\bf{\$name}} Themed username of node author.} \tn 
+% Row Count 11 (+ 1)
+% Row 6
+\SetRowColor{LightBackground}
+\mymulticolumn{1}{x{5.377cm}}{{\bf{\$node\_url}} Direct url of the current node} \tn 
+% Row Count 12 (+ 1)
+% Row 7
+\SetRowColor{white}
+\mymulticolumn{1}{x{5.377cm}}{{\bf{\$terms}} the themed list of taxonomy term links.} \tn 
+% Row Count 13 (+ 1)
+% Row 8
+\SetRowColor{LightBackground}
+\mymulticolumn{1}{x{5.377cm}}{{\bf{\$submitted}} themed submission} \tn 
+% Row Count 14 (+ 1)
+% Row 9
+\SetRowColor{white}
+\mymulticolumn{1}{x{5.377cm}}{information.} \tn 
+% Row Count 15 (+ 1)
+% Row 10
+\SetRowColor{LightBackground}
+\mymulticolumn{1}{x{5.377cm}}{{\bf{\$comment\_count}} Number of comments attached to the node.} \tn 
+% Row Count 17 (+ 2)
+% Row 11
+\SetRowColor{white}
+\mymulticolumn{1}{x{5.377cm}}{{\bf{\$created}} Time the node was published formatted in Unix timestamp.} \tn 
+% Row Count 19 (+ 2)
+\hhline{>{\arrayrulecolor{DarkBackground}}-}
+\SetRowColor{LightBackground}
+\mymulticolumn{1}{x{5.377cm}}{Version 6}  \tn 
+\hhline{>{\arrayrulecolor{DarkBackground}}-}
+\end{tabularx}
+\par\addvspace{1.3em}
+
+\begin{tabularx}{5.377cm}{X}
+\SetRowColor{DarkBackground}
+\mymulticolumn{1}{x{5.377cm}}{\bf\textcolor{white}{block.tpl.php}}  \tn
+% Row 0
+\SetRowColor{LightBackground}
+\mymulticolumn{1}{x{5.377cm}}{{\bf{\$block-\textgreater{}subject}} Block title} \tn 
+% Row Count 1 (+ 1)
+% Row 1
+\SetRowColor{white}
+\mymulticolumn{1}{x{5.377cm}}{{\bf{\$block-\textgreater{}content}} Block content} \tn 
+% Row Count 2 (+ 1)
+\hhline{>{\arrayrulecolor{DarkBackground}}-}
+\SetRowColor{LightBackground}
+\mymulticolumn{1}{x{5.377cm}}{Version 6}  \tn 
+\hhline{>{\arrayrulecolor{DarkBackground}}-}
+\end{tabularx}
+\par\addvspace{1.3em}
+
+\begin{tabularx}{5.377cm}{X}
+\SetRowColor{DarkBackground}
+\mymulticolumn{1}{x{5.377cm}}{\bf\textcolor{white}{Drupal Coding Standards}}  \tn
+% Row 0
+\SetRowColor{LightBackground}
+\mymulticolumn{1}{x{5.377cm}}{{\bf{CSS}} \seqsplit{http://drupal.org/node/302199}} \tn 
+% Row Count 1 (+ 1)
+% Row 1
+\SetRowColor{white}
+\mymulticolumn{1}{x{5.377cm}}{{\bf{Markup}} \seqsplit{http://groups.drupal.org/node/6355}} \tn 
+% Row Count 2 (+ 1)
+% Row 2
+\SetRowColor{LightBackground}
+\mymulticolumn{1}{x{5.377cm}}{{\bf{PHP}} \seqsplit{http://drupal.org/coding-standards}} \tn 
+% Row Count 3 (+ 1)
+% Row 3
+\SetRowColor{white}
+\mymulticolumn{1}{x{5.377cm}}{{\bf{Accessibility}} \seqsplit{http://groups.drupal.org/node/18595}} \tn 
+% Row Count 5 (+ 2)
+\hhline{>{\arrayrulecolor{DarkBackground}}-}
+\end{tabularx}
+\par\addvspace{1.3em}
+
+
+% That's all folks
+\end{multicols*}
+
+\end{document}
