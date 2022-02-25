@@ -130,34 +130,34 @@
 
 \begin{tabularx}{5.377cm}{X}
 \SetRowColor{DarkBackground}
-\mymulticolumn{1}{x{5.377cm}}{\bf\textcolor{white}{Installation}}  \tn
+\mymulticolumn{1}{x{5.377cm}}{\bf\textcolor{white}{Basic commands}}  \tn
 % Row 0
 \SetRowColor{LightBackground}
-\mymulticolumn{1}{x{5.377cm}}{{\bf{\$pip install conan}} Gets the conan python package.} \tn 
+\mymulticolumn{1}{x{5.377cm}}{{\bf{\$conan export}} Copies recipe to local cache but does not build it} \tn 
 % Row Count 2 (+ 2)
 % Row 1
 \SetRowColor{white}
-\mymulticolumn{1}{x{5.377cm}}{{\bf{\$site\_name}} The name of the site, empty when display has been disabled in theme settings.} \tn 
+\mymulticolumn{1}{x{5.377cm}}{{\bf{\$conan install helloWorld/conanfile.py}} Install all the dependencies for helloWorld application/package.} \tn 
 % Row Count 4 (+ 2)
 % Row 2
 \SetRowColor{LightBackground}
-\mymulticolumn{1}{x{5.377cm}}{{\bf{\$site\_slogan}} The slogan of the site, empty when display has been disabled in theme settings.} \tn 
+\mymulticolumn{1}{x{5.377cm}}{{\bf{\$conan search}} Lists all the recipes in local cache.} \tn 
 % Row Count 6 (+ 2)
 % Row 3
 \SetRowColor{white}
-\mymulticolumn{1}{x{5.377cm}}{{\bf{\$mission}} The text of the site mission, empty when display has been disabled in theme settings.} \tn 
+\mymulticolumn{1}{x{5.377cm}}{{\bf{\$conan search <package\_name>}} Shows info about the package. No info, if not built yet} \tn 
 % Row Count 8 (+ 2)
 % Row 4
 \SetRowColor{LightBackground}
-\mymulticolumn{1}{x{5.377cm}}{{\bf{\$search\_box}} HTML to display the search box, empty if search has been disabled.} \tn 
+\mymulticolumn{1}{x{5.377cm}}{{\bf{\$conan new <asdf>}} Creates a new recipe with boilerplate code.} \tn 
 % Row Count 10 (+ 2)
 % Row 5
 \SetRowColor{white}
-\mymulticolumn{1}{x{5.377cm}}{{\bf{\$primary\_links}} An array containing primary navigation links for the site, if they have been configured.} \tn 
+\mymulticolumn{1}{x{5.377cm}}{{\bf{\$conan create}} Builds a package from a recipe and stores it to local cache.} \tn 
 % Row Count 13 (+ 3)
 % Row 6
 \SetRowColor{LightBackground}
-\mymulticolumn{1}{x{5.377cm}}{{\bf{\$secondary\_links}} An array containing secondary navigation links for the site, if they have been configured.} \tn 
+\mymulticolumn{1}{x{5.377cm}}{{\bf{\$conan build}} Executes the build() method.} \tn 
 % Row Count 16 (+ 3)
 % Row 7
 \SetRowColor{white}
