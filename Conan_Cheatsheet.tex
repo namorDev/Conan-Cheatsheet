@@ -194,14 +194,14 @@
 \columnbreak
 \begin{tabularx}{5.377cm}{X}
 \SetRowColor{DarkBackground}
-\mymulticolumn{1}{x{5.377cm}}{\bf\textcolor{white}{page.tpl.php (cont)}}  \tn
+\mymulticolumn{1}{x{5.377cm}}{\bf\textcolor{white}{Consuming Packages}}  \tn
 % Row 14
 \SetRowColor{LightBackground}
-\mymulticolumn{1}{x{5.377cm}}{{\bf{\$right}} The HTML for the right sidebar.} \tn 
+\mymulticolumn{1}{x{5.377cm}}{{\bf{\$conan install hello/0.1}} Install dependencies} \tn 
 % Row Count 1 (+ 1)
 % Row 15
 \SetRowColor{white}
-\mymulticolumn{1}{x{5.377cm}}{{\bf{\$node}} The node template file.} \tn 
+\mymulticolumn{1}{x{5.377cm}}{{\bf{\$conan install hello/0.1 --build=missing}} Builds dependencies if no suitable binary found} \tn 
 % Row Count 2 (+ 1)
 % Row 16
 \SetRowColor{LightBackground}
@@ -224,18 +224,18 @@
 
 \begin{tabularx}{5.377cm}{X}
 \SetRowColor{DarkBackground}
-\mymulticolumn{1}{x{5.377cm}}{\bf\textcolor{white}{node.tpl.php}}  \tn
+\mymulticolumn{1}{x{5.377cm}}{\bf\textcolor{white}{Creating Packages}}  \tn
 % Row 0
 \SetRowColor{LightBackground}
-\mymulticolumn{1}{x{5.377cm}}{{\bf{\$title}} the (sanitized) title of the node.} \tn 
+\mymulticolumn{1}{x{5.377cm}}{{\bf{\$conan create hello/0.1}} Creates a package} \tn 
 % Row Count 1 (+ 1)
 % Row 1
 \SetRowColor{white}
-\mymulticolumn{1}{x{5.377cm}}{{\bf{\$content}} Hello World} \tn 
+\mymulticolumn{1}{x{5.377cm}}{{\bf{\$conan new hello}} Creates a new recipe from the hello template} \tn 
 % Row Count 6 (+ 5)
 % Row 2
 \SetRowColor{LightBackground}
-\mymulticolumn{1}{x{5.377cm}}{{\bf{\$picture}} The authors picture of the node.} \tn 
+\mymulticolumn{1}{x{5.377cm}}{{\bf{\$conan build}} Builds a package. Invokes the build method} \tn 
 % Row Count 7 (+ 1)
 % Row 3
 \SetRowColor{white}
@@ -282,42 +282,76 @@
 
 \begin{tabularx}{5.377cm}{X}
 \SetRowColor{DarkBackground}
-\mymulticolumn{1}{x{5.377cm}}{\bf\textcolor{white}{block.tpl.php}}  \tn
+\mymulticolumn{1}{x{5.377cm}}{\bf\textcolor{white}{Inspecting Packages}}  \tn
 % Row 0
 \SetRowColor{LightBackground}
-\mymulticolumn{1}{x{5.377cm}}{{\bf{\$block-\textgreater{}subject}} Block title} \tn 
+\mymulticolumn{1}{x{5.377cm}}{{\bf{\$conan search}} Lists all packages in local cache} \tn 
 % Row Count 1 (+ 1)
 % Row 1
 \SetRowColor{white}
-\mymulticolumn{1}{x{5.377cm}}{{\bf{\$block-\textgreater{}content}} Block content} \tn 
+\mymulticolumn{1}{x{5.377cm}}{{\bf{\$conan search hello*}} Shows info about binaries} \tn 
 % Row Count 2 (+ 1)
 \hhline{>{\arrayrulecolor{DarkBackground}}-}
 \SetRowColor{LightBackground}
-\mymulticolumn{1}{x{5.377cm}}{Version 6}  \tn 
+\mymulticolumn{1}{x{5.377cm}}{{\bf{\$conan info}} Shows dependency graph} \tn 
 \hhline{>{\arrayrulecolor{DarkBackground}}-}
 \end{tabularx}
 \par\addvspace{1.3em}
 
 \begin{tabularx}{5.377cm}{X}
 \SetRowColor{DarkBackground}
-\mymulticolumn{1}{x{5.377cm}}{\bf\textcolor{white}{Drupal Coding Standards}}  \tn
+\mymulticolumn{1}{x{5.377cm}}{\bf\textcolor{white}{Terms}}  \tn
 % Row 0
 \SetRowColor{LightBackground}
-\mymulticolumn{1}{x{5.377cm}}{{\bf{CSS}} \seqsplit{http://drupal.org/node/302199}} \tn 
+\mymulticolumn{1}{x{5.377cm}}{{\bf{profile}} \seqsplit{Stores settings and options}} \tn 
 % Row Count 1 (+ 1)
 % Row 1
 \SetRowColor{white}
-\mymulticolumn{1}{x{5.377cm}}{{\bf{Markup}} \seqsplit{http://groups.drupal.org/node/6355}} \tn 
+\mymulticolumn{1}{x{5.377cm}}{{\bf{build\_requires}} \seqsplit{Requirements for a build. Testing Frameworks and Build Frameworks}} \tn 
 % Row Count 2 (+ 1)
 % Row 2
 \SetRowColor{LightBackground}
-\mymulticolumn{1}{x{5.377cm}}{{\bf{PHP}} \seqsplit{http://drupal.org/coding-standards}} \tn 
+\mymulticolumn{1}{x{5.377cm}}{{\bf{python\_requires}} \seqsplit{Calling python code from another recipe or python module}} \tn 
 % Row Count 3 (+ 1)
 % Row 3
 \SetRowColor{white}
-\mymulticolumn{1}{x{5.377cm}}{{\bf{Accessibility}} \seqsplit{http://groups.drupal.org/node/18595}} \tn 
+\mymulticolumn{1}{x{5.377cm}}{{\bf{local cache}} \seqsplit{bla bla}} \tn 
+
+% Row Count 3 (+ 1)
+% Row 3
+\SetRowColor{LightBackground}
+\mymulticolumn{1}{x{5.377cm}}{{\bf{recipe reference}} \seqsplit{bla bla}} \tn 
+
+% Row Count 3 (+ 1)
+% Row 3
+\SetRowColor{white}
+\mymulticolumn{1}{x{5.377cm}}{{\bf{package ID}} \seqsplit{bla bla}} \tn 
+
 % Row Count 5 (+ 2)
 \hhline{>{\arrayrulecolor{DarkBackground}}-}
+\end{tabularx}
+\par\addvspace{1.3em}
+
+\begin{tabularx}{5.377cm}{X}
+	\SetRowColor{DarkBackground}
+	\mymulticolumn{1}{x{5.377cm}}{\bf\textcolor{white}{Working with remotes}}  \tn
+	% Row 0
+	\SetRowColor{LightBackground}
+	\mymulticolumn{1}{x{5.377cm}}{{\bf{\$conan upload}} \seqsplit{Uploads a package to a remote}} \tn 
+	% Row Count 1 (+ 1)
+	% Row 1
+	\SetRowColor{white}
+	\mymulticolumn{1}{x{5.377cm}}{{\bf{\$conan remote list}} \seqsplit{shows remote repositories}} \tn 
+	% Row Count 2 (+ 1)
+	% Row 2
+	\SetRowColor{LightBackground}
+	\mymulticolumn{1}{x{5.377cm}}{{\bf{conan center}} \seqsplit{Default remote repo}} \tn 
+	% Row Count 3 (+ 1)
+	% Row 3
+	\SetRowColor{white}
+	\mymulticolumn{1}{x{5.377cm}}{{\bf{Accessibility}} \seqsplit{http://groups.drupal.org/node/18595}} \tn 
+	% Row Count 5 (+ 2)
+	\hhline{>{\arrayrulecolor{DarkBackground}}-}
 \end{tabularx}
 \par\addvspace{1.3em}
 
