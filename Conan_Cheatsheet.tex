@@ -88,7 +88,7 @@
 \begin{multicols}{3}
 \begin{tabulary}{5.8cm}{LL}
   \SetRowColor{FootBackground}
-  \mymulticolumn{2}{p{5.377cm}}{\bf\textcolor{white}{Cheatographer}}  \\
+  \mymulticolumn{2}{p{5.377cm}}{\bf\textcolor{white}{Cheatsheet Template}}  \\
   \vspace{-2pt}emmajane \\
   \uline{cheatography.com/emmajane} \\
   \end{tabulary}
@@ -96,21 +96,19 @@
 \columnbreak
 \begin{tabulary}{5.8cm}{L}
   \SetRowColor{FootBackground}
-  \mymulticolumn{1}{p{5.377cm}}{\bf\textcolor{white}{Cheat Sheet}}  \\
-   \vspace{-2pt}Published 27th January, 2012.\\
-   Updated 2nd June, 2014.\\
-   Page {\thepage} of \pageref{LastPage}.
+  \mymulticolumn{1}{p{5.377cm}}{\bf\textcolor{white}{Cheat Sheet creator}}  \\
+   \vspace{-2pt} namorDev\\
+   \uline{https://github.com/namorDev/Conan-\\
+   	Cheatsheet} \\
 \end{tabulary}
 \vfill
 \columnbreak
 \begin{tabulary}{5.8cm}{L}
   \SetRowColor{FootBackground}
-  \mymulticolumn{1}{p{5.377cm}}{\bf\textcolor{white}{Sponsor}}  \\
+  \mymulticolumn{1}{p{5.377cm}}{\bf\textcolor{white}{Event}}  \\
   \SetRowColor{white}
-  \vspace{-5pt}
-  %\includegraphics[width=48px,height=48px]{dave.jpeg}
-  Measure your website readability!\\
-  www.readability-score.com
+  \vspace{-2pt} Noser Engineering AG \\
+  Kickoff 2022
 \end{tabulary}
 \end{multicols}}
 
@@ -128,97 +126,23 @@
 
 \begin{multicols*}{3}
 
-\begin{tabularx}{5.377cm}{X}
-\SetRowColor{DarkBackground}
-\mymulticolumn{1}{x{5.377cm}}{\bf\textcolor{white}{Basic commands}}  \tn
-% Row 0
-\SetRowColor{LightBackground}
-\mymulticolumn{1}{x{5.377cm}}{{\bf{\$conan export}} Copies recipe to local cache but does not build it} \tn 
-% Row Count 2 (+ 2)
-% Row 1
-\SetRowColor{white}
-\mymulticolumn{1}{x{5.377cm}}{{\bf{\$conan install helloWorld/conanfile.py}} Install all the dependencies for helloWorld application/package.} \tn 
-% Row Count 4 (+ 2)
-% Row 2
-\SetRowColor{LightBackground}
-\mymulticolumn{1}{x{5.377cm}}{{\bf{\$conan search}} Lists all the recipes in local cache.} \tn 
-% Row Count 6 (+ 2)
-% Row 3
-\SetRowColor{white}
-\mymulticolumn{1}{x{5.377cm}}{{\bf{\$conan search <package\_name>}} Shows info about the package. No info, if not built yet} \tn 
-% Row Count 8 (+ 2)
-% Row 4
-\SetRowColor{LightBackground}
-\mymulticolumn{1}{x{5.377cm}}{{\bf{\$conan new <asdf>}} Creates a new recipe with boilerplate code.} \tn 
-% Row Count 10 (+ 2)
-% Row 5
-\SetRowColor{white}
-\mymulticolumn{1}{x{5.377cm}}{{\bf{\$conan create}} Builds a package from a recipe and stores it to local cache.} \tn 
-% Row Count 13 (+ 3)
-% Row 6
-\SetRowColor{LightBackground}
-\mymulticolumn{1}{x{5.377cm}}{{\bf{\$conan build}} Executes the build() method.} \tn 
-% Row Count 16 (+ 3)
-% Row 7
-\SetRowColor{white}
-\mymulticolumn{1}{x{5.377cm}}{{\bf{\$conan info}} Shows dependenies of a package} \tn 
-% Row Count 17 (+ 1)
-% Row 8
-\SetRowColor{LightBackground}
-\mymulticolumn{1}{x{5.377cm}}{{\bf{\$breadcrumb}} The breadcrumb trail for the current page.} \tn 
-% Row Count 19 (+ 2)
-% Row 9
-\SetRowColor{white}
-\mymulticolumn{1}{x{5.377cm}}{{\bf{\$title}} The page title, for use in the actual HTML content.} \tn 
-% Row Count 21 (+ 2)
-% Row 10
-\SetRowColor{LightBackground}
-\mymulticolumn{1}{x{5.377cm}}{{\bf{\$help}} Dynamic help text, mostly for admin pages.} \tn 
-% Row Count 23 (+ 2)
-% Row 11
-\SetRowColor{white}
-\mymulticolumn{1}{x{5.377cm}}{{\bf{\$messages}} HTML for status and error messages. Should be displayed prominently.} \tn 
-% Row Count 25 (+ 2)
-% Row 12
-\SetRowColor{LightBackground}
-\mymulticolumn{1}{x{5.377cm}}{{\bf{\$tabs}} Tabs linking to any sub-pages beneath the current page (e.g., the view and edit tabs when displaying a node).} \tn 
-% Row Count 28 (+ 3)
-% Row 13
-\SetRowColor{white}
-\mymulticolumn{1}{x{5.377cm}}{{\bf{\$content}} The main content of the current Drupal page.} \tn 
-% Row Count 30 (+ 2)
-\end{tabularx}
-\par\addvspace{1.3em}
 
 \vfill
 \columnbreak
 \begin{tabularx}{5.377cm}{X}
 \SetRowColor{DarkBackground}
 \mymulticolumn{1}{x{5.377cm}}{\bf\textcolor{white}{Consuming Packages}}  \tn
-% Row 14
+
 \SetRowColor{LightBackground}
-\mymulticolumn{1}{x{5.377cm}}{{\bf{\$conan install hello/0.1}} Install dependencies} \tn 
+\mymulticolumn{1}{x{5.377cm}}{{\bf{\$conan install <recipe reference>}} Install dependencies.} \tn 
 % Row Count 1 (+ 1)
 % Row 15
 \SetRowColor{white}
-\mymulticolumn{1}{x{5.377cm}}{{\bf{\$conan install hello/0.1 --build=missing}} Builds dependencies if no suitable binary found} \tn 
-% Row Count 2 (+ 1)
-% Row 16
-\SetRowColor{LightBackground}
-\mymulticolumn{1}{x{5.377cm}}{{\bf{\$feed\_icons}} A string of all feed icons for the current page.} \tn 
-% Row Count 4 (+ 2)
-% Row 17
-\SetRowColor{white}
-\mymulticolumn{1}{x{5.377cm}}{{\bf{\$footer\_message}} The footer message as defined in the admin settings.} \tn 
-% Row Count 6 (+ 2)
-% Row 18
-\SetRowColor{LightBackground}
-\mymulticolumn{1}{x{5.377cm}}{{\bf{\$footer}} The footer region.} \tn 
-% Row Count 7 (+ 1)
+\mymulticolumn{1}{x{5.377cm}}{{\bf{\$conan install . --build=missing}} Builds dependencies if no suitable binary found. "." specifies the location of the conanfile.} \tn 
+
+
 \hhline{>{\arrayrulecolor{DarkBackground}}-}
-\SetRowColor{LightBackground}
-\mymulticolumn{1}{x{5.377cm}}{Version 6}  \tn 
-\hhline{>{\arrayrulecolor{DarkBackground}}-}
+
 \end{tabularx}
 \par\addvspace{1.3em}
 
@@ -227,9 +151,14 @@
 \mymulticolumn{1}{x{5.377cm}}{\bf\textcolor{white}{Creating Packages}}  \tn
 % Row 0
 \SetRowColor{LightBackground}
-\mymulticolumn{1}{x{5.377cm}}{{\bf{\$conan create hello/0.1}} Creates a package} \tn 
-% Row Count 1 (+ 1)
-% Row 1
+\mymulticolumn{1}{x{5.377cm}}{{\bf{\$conan create hello/0.1}} Creates a package and stores it to local cache} \tn 
+
+% Row Count 8 (+ 2)
+% Row 4
+\SetRowColor{LightBackground}
+\mymulticolumn{1}{x{5.377cm}}{{\bf{\$conan new <recipe\_reference>}} Creates a new recipe with boilerplate code.} \tn 
+
+
 \SetRowColor{white}
 \mymulticolumn{1}{x{5.377cm}}{{\bf{\$conan new hello}} Creates a new recipe from the hello template} \tn 
 % Row Count 6 (+ 5)
@@ -239,43 +168,8 @@
 % Row Count 7 (+ 1)
 % Row 3
 \SetRowColor{white}
-\mymulticolumn{1}{x{5.377cm}}{{\bf{\$date}} Formatted creation date.} \tn 
-% Row Count 8 (+ 1)
-% Row 4
-\SetRowColor{LightBackground}
-\mymulticolumn{1}{x{5.377cm}}{{\bf{\$links}} Themed links like "Read more", "Add new comment", etc.} \tn 
-% Row Count 10 (+ 2)
-% Row 5
-\SetRowColor{white}
-\mymulticolumn{1}{x{5.377cm}}{{\bf{\$name}} Themed username of node author.} \tn 
-% Row Count 11 (+ 1)
-% Row 6
-\SetRowColor{LightBackground}
-\mymulticolumn{1}{x{5.377cm}}{{\bf{\$node\_url}} Direct url of the current node} \tn 
-% Row Count 12 (+ 1)
-% Row 7
-\SetRowColor{white}
-\mymulticolumn{1}{x{5.377cm}}{{\bf{\$terms}} the themed list of taxonomy term links.} \tn 
-% Row Count 13 (+ 1)
-% Row 8
-\SetRowColor{LightBackground}
-\mymulticolumn{1}{x{5.377cm}}{{\bf{\$submitted}} themed submission} \tn 
-% Row Count 14 (+ 1)
-% Row 9
-\SetRowColor{white}
-\mymulticolumn{1}{x{5.377cm}}{information.} \tn 
-% Row Count 15 (+ 1)
-% Row 10
-\SetRowColor{LightBackground}
-\mymulticolumn{1}{x{5.377cm}}{{\bf{\$comment\_count}} Number of comments attached to the node.} \tn 
-% Row Count 17 (+ 2)
-% Row 11
-\SetRowColor{white}
-\mymulticolumn{1}{x{5.377cm}}{{\bf{\$created}} Time the node was published formatted in Unix timestamp.} \tn 
-% Row Count 19 (+ 2)
-\hhline{>{\arrayrulecolor{DarkBackground}}-}
-\SetRowColor{LightBackground}
-\mymulticolumn{1}{x{5.377cm}}{Version 6}  \tn 
+\mymulticolumn{1}{x{5.377cm}}{{\bf{\$conan export}} Export recipe to local cache but does not build it} \tn 
+
 \hhline{>{\arrayrulecolor{DarkBackground}}-}
 \end{tabularx}
 \par\addvspace{1.3em}
@@ -286,14 +180,13 @@
 % Row 0
 \SetRowColor{LightBackground}
 \mymulticolumn{1}{x{5.377cm}}{{\bf{\$conan search}} Lists all packages in local cache} \tn 
-% Row Count 1 (+ 1)
-% Row 1
+
 \SetRowColor{white}
-\mymulticolumn{1}{x{5.377cm}}{{\bf{\$conan search hello*}} Shows info about binaries} \tn 
+\mymulticolumn{1}{x{5.377cm}}{{\bf{\$conan search <package\_reference>}} Shows info about package. No info, if no binaries existing} \tn 
 % Row Count 2 (+ 1)
 \hhline{>{\arrayrulecolor{DarkBackground}}-}
 \SetRowColor{LightBackground}
-\mymulticolumn{1}{x{5.377cm}}{{\bf{\$conan info}} Shows dependency graph} \tn 
+\mymulticolumn{1}{x{5.377cm}}{{\bf{\$conan info}} Shows dependencies of a package.} \tn 
 \hhline{>{\arrayrulecolor{DarkBackground}}-}
 \end{tabularx}
 \par\addvspace{1.3em}
@@ -346,11 +239,7 @@
 	% Row 2
 	\SetRowColor{LightBackground}
 	\mymulticolumn{1}{x{5.377cm}}{{\bf{conan center}} \seqsplit{Default remote repo}} \tn 
-	% Row Count 3 (+ 1)
-	% Row 3
-	\SetRowColor{white}
-	\mymulticolumn{1}{x{5.377cm}}{{\bf{Accessibility}} \seqsplit{http://groups.drupal.org/node/18595}} \tn 
-	% Row Count 5 (+ 2)
+
 	\hhline{>{\arrayrulecolor{DarkBackground}}-}
 \end{tabularx}
 \par\addvspace{1.3em}
