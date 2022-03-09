@@ -128,7 +128,7 @@
 \mymulticolumn{1}{x{5.377cm}}{\bf\textcolor{white}{Consuming Packages}}  \tn
 
 \SetRowColor{LightBackground}
-\mymulticolumn{1}{x{5.377cm}}{{\bf{\$conan install <recipe reference>}} Install dependencies.} \tn 
+\mymulticolumn{1}{x{5.377cm}}{{\bf{\$conan install <recipe\_reference>}} Install dependencies.} \tn 
 % Row Count 1 (+ 1)
 % Row 15
 \SetRowColor{white}
@@ -186,58 +186,77 @@
 \par\addvspace{1.3em}
 
 \begin{tabularx}{5.377cm}{X}
-\SetRowColor{DarkBackground}
-\mymulticolumn{1}{x{5.377cm}}{\bf\textcolor{white}{Terms}}  \tn
-% Row 0
-\SetRowColor{LightBackground}
-\mymulticolumn{1}{x{5.377cm}}{{\bf{profile}} \seqsplit{Stores settings and options}} \tn 
-% Row Count 1 (+ 1)
-% Row 1
-\SetRowColor{white}
-\mymulticolumn{1}{x{5.377cm}}{{\bf{build\_requires}} \seqsplit{Requirements for a build. Testing Frameworks and Build Frameworks}} \tn 
-% Row Count 2 (+ 1)
-% Row 2
-\SetRowColor{LightBackground}
-\mymulticolumn{1}{x{5.377cm}}{{\bf{python\_requires}} \seqsplit{Calling python code from another recipe or python module}} \tn 
-% Row Count 3 (+ 1)
-% Row 3
-\SetRowColor{white}
-\mymulticolumn{1}{x{5.377cm}}{{\bf{local cache}} \seqsplit{bla bla}} \tn 
-
-% Row Count 3 (+ 1)
-% Row 3
-\SetRowColor{LightBackground}
-\mymulticolumn{1}{x{5.377cm}}{{\bf{recipe reference}} \seqsplit{bla bla}} \tn 
-
-% Row Count 3 (+ 1)
-% Row 3
-\SetRowColor{white}
-\mymulticolumn{1}{x{5.377cm}}{{\bf{package ID}} \seqsplit{bla bla}} \tn 
-
-% Row Count 5 (+ 2)
-\hhline{>{\arrayrulecolor{DarkBackground}}-}
-\end{tabularx}
-\par\addvspace{1.3em}
-
-\begin{tabularx}{5.377cm}{X}
 	\SetRowColor{DarkBackground}
 	\mymulticolumn{1}{x{5.377cm}}{\bf\textcolor{white}{Working with remotes}}  \tn
 	% Row 0
 	\SetRowColor{LightBackground}
-	\mymulticolumn{1}{x{5.377cm}}{{\bf{\$conan upload}} \seqsplit{Uploads a package to a remote}} \tn 
+	\mymulticolumn{1}{x{5.377cm}}{{\bf{\$conan upload}} Uploads a package to a remote} \tn 
 	% Row Count 1 (+ 1)
 	% Row 1
 	\SetRowColor{white}
-	\mymulticolumn{1}{x{5.377cm}}{{\bf{\$conan remote list}} \seqsplit{shows remote repositories}} \tn 
+	\mymulticolumn{1}{x{5.377cm}}{{\bf{\$conan remote list}} shows remote repositories} \tn 
 	% Row Count 2 (+ 1)
 	% Row 2
 	\SetRowColor{LightBackground}
-	\mymulticolumn{1}{x{5.377cm}}{{\bf{conan center}} \seqsplit{Default remote repo}} \tn 
+	\mymulticolumn{1}{x{5.377cm}}{{\bf{conan center}} Default remote repo} \tn 
+	
+	\SetRowColor{white}
+	\mymulticolumn{1}{x{5.377cm}}{{\bf{conan remote add <remote\_repo\_name> <url>}} Adds a remote repository} \tn 
+	
+	\SetRowColor{LightBackground}
+    \mymulticolumn{1}{x{5.377cm}}{{\bf{conan search -r=<remote\_repo\_name>}} Searches for packages in a remote repo} \tn 
+
+	\SetRowColor{white}
+	\mymulticolumn{1}{x{5.377cm}}{{\bf{conan upload <recipe\_reference> --all -r=<remote\_repo\_name> <url>}} Uploads a package to the specified remote repository} \tn 
 
 	\hhline{>{\arrayrulecolor{DarkBackground}}-}
 \end{tabularx}
 \par\addvspace{1.3em}
 
+\begin{tabularx}{5.377cm}{X}
+	\SetRowColor{DarkBackground}
+	\mymulticolumn{1}{x{5.377cm}}{\bf\textcolor{white}{Terms}}  \tn
+
+	\SetRowColor{LightBackground}
+	\mymulticolumn{1}{x{5.377cm}}{{\bf{profile}} Stores settings and options} \tn 
+	
+	\SetRowColor{white}
+	\mymulticolumn{1}{x{5.377cm}}{{\bf{settings}} Attribute which contains settings for a build system such as arch, os, compiler and compiler version. Will affect all dependencies} \tn 
+
+	\SetRowColor{LightBackground}
+	\mymulticolumn{1}{x{5.377cm}}{{\bf{options}} Attribute which contains options for a package such as if a library should be SHARED or STATIC. Affect only parts of the dependency tree} \tn 
+
+	\SetRowColor{white}
+	\mymulticolumn{1}{x{5.377cm}}{{\bf{requires}} Attribute to specify the requirements for an application} \tn 
+
+	\SetRowColor{LightBackground}
+	\mymulticolumn{1}{x{5.377cm}}{{\bf{requirements()}} Python function inside a conanfile.py to specify the requirements for an application. Can contain conditional logic in comparison to the `requires` attribute} \tn 
+
+	\SetRowColor{white}
+	\mymulticolumn{1}{x{5.377cm}}{{\bf{build\_requires}} Attribute in a conanfile for specifying requirements for a build. Testing Frameworks and Build Frameworks} \tn 
+
+	\SetRowColor{LightBackground}
+	\mymulticolumn{1}{x{5.377cm}}{{\bf{python\_requires}} Calling python code from another recipe or python module} \tn 
+
+	\SetRowColor{white}
+	\mymulticolumn{1}{x{5.377cm}}{{\bf{local cache}} Location on developer machine where conan packages are stored} \tn 
+	
+	\SetRowColor{LightBackground}
+	\mymulticolumn{1}{x{5.377cm}}{{\bf{recipe reference}} Identifies a recipe e.g. pkg/0.1/@user/testing} \tn 
+	
+	\SetRowColor{white}
+	\mymulticolumn{1}{x{5.377cm}}{{\bf{package ID}} Identifies a unique binary. Represented as a hash string which is calculated out of the settings and options} \tn 
+	
+	\SetRowColor{LightBackground}
+	\mymulticolumn{1}{x{5.377cm}}{{\bf{In-source recipe}} When the recipe and the sources are in the same repo} \tn 
+	
+	\SetRowColor{white}
+	\mymulticolumn{1}{x{5.377cm}}{{\bf{Out-of-source recipe}} When the recipe is not in the same repo as the sources} \tn 
+	
+	% Row Count 5 (+ 2)
+	\hhline{>{\arrayrulecolor{DarkBackground}}-}
+\end{tabularx}
+\par\addvspace{1.3em}
 
 % That's all folks
 \end{multicols*}
