@@ -93,7 +93,7 @@
 \columnbreak
 \begin{tabulary}{5.8cm}{L}
   \SetRowColor{FootBackground}
-  \mymulticolumn{1}{p{5.377cm}}{\bf\textcolor{white}{Cheat Sheet creator}}  \\
+  \mymulticolumn{1}{p{5.377cm}}{\bf\textcolor{white}{Cheatsheet creator}}  \\
    \vspace{-2pt} namorDev\\
    \uline{https://github.com/namorDev/Conan-\\
    	Cheatsheet} \\
@@ -109,9 +109,6 @@
 \end{tabulary}
 \end{multicols}}
 
-
-
-
 \begin{document}
 \raggedright
 \raggedcolumns
@@ -122,32 +119,7 @@
 \footnotesize % Small font.
 
 
-
-adfad
-
-
-\includegraphics[scale=0.2]{BuildSystemAbstraction}
-
-
-\includegraphics[scale=0.2]{Recipe_InOut}
-
-
-\includegraphics[scale=0.2]{Recipe}
-
-
-\includegraphics[scale=0.2]{BinaryManagement}
-
-
-\includegraphics[scale=0.2]{BinaryManagement_RemoteLocal}
-
-
-
-
-
-\pagebreak
-
 \begin{multicols*}{3}
-
 
 \vfill
 \columnbreak
@@ -156,12 +128,10 @@ adfad
 \mymulticolumn{1}{x{5.377cm}}{\bf\textcolor{white}{Consuming Packages}}  \tn
 
 \SetRowColor{LightBackground}
-\mymulticolumn{1}{x{5.377cm}}{{\bf{\$conan install <recipe\_reference>}} Install dependencies.} \tn 
-% Row Count 1 (+ 1)
-% Row 15
-\SetRowColor{white}
-\mymulticolumn{1}{x{5.377cm}}{{\bf{\$conan install . --build=missing}} Builds dependencies if no suitable binary found. "." specifies the location of the conanfile.} \tn 
+\mymulticolumn{1}{x{5.377cm}}{{\bf{\$conan install <recipe\_reference>}} Install dependencies} \tn 
 
+\SetRowColor{white}
+\mymulticolumn{1}{x{5.377cm}}{{\bf{\$conan install . --build=missing}} Builds dependencies if no suitable binary found. "." specifies the location of the conanfile} \tn 
 
 \hhline{>{\arrayrulecolor{DarkBackground}}-}
 
@@ -171,26 +141,21 @@ adfad
 \begin{tabularx}{5.377cm}{X}
 \SetRowColor{DarkBackground}
 \mymulticolumn{1}{x{5.377cm}}{\bf\textcolor{white}{Creating Packages}}  \tn
-% Row 0
-\SetRowColor{LightBackground}
-\mymulticolumn{1}{x{5.377cm}}{{\bf{\$conan create hello/0.1}} Creates a package and stores it to local cache} \tn 
 
-% Row Count 8 (+ 2)
-% Row 4
 \SetRowColor{LightBackground}
-\mymulticolumn{1}{x{5.377cm}}{{\bf{\$conan new <recipe\_reference>}} Creates a new recipe with boilerplate code.} \tn 
-
+\mymulticolumn{1}{x{5.377cm}}{{\bf{\$conan new <recipe\_reference>}} Creates a new recipe with boilerplate code} \tn 
 
 \SetRowColor{white}
-\mymulticolumn{1}{x{5.377cm}}{{\bf{\$conan new hello}} Creates a new recipe from the hello template} \tn 
-% Row Count 6 (+ 5)
-% Row 2
+\mymulticolumn{1}{x{5.377cm}}{{\bf{\$conan new mypackage/0.1 -t}} Creates a new recipe with the name mypackage and adds a test\_package} \tn 
+
+\SetRowColor{LightBackground}
+\mymulticolumn{1}{x{5.377cm}}{{\bf{\$conan export <path\_to\_conanfile>}} Export recipe to local cache but does not build it} \tn 
+
+\SetRowColor{white}
+\mymulticolumn{1}{x{5.377cm}}{{\bf{\$conan create . -pr <profile>}} Creates a package with the given profile and stores it to local cache} \tn 
+
 \SetRowColor{LightBackground}
 \mymulticolumn{1}{x{5.377cm}}{{\bf{\$conan build}} Builds a package. Invokes the build method} \tn 
-% Row Count 7 (+ 1)
-% Row 3
-\SetRowColor{white}
-\mymulticolumn{1}{x{5.377cm}}{{\bf{\$conan export}} Export recipe to local cache but does not build it} \tn 
 
 \hhline{>{\arrayrulecolor{DarkBackground}}-}
 \end{tabularx}
@@ -199,16 +164,18 @@ adfad
 \begin{tabularx}{5.377cm}{X}
 \SetRowColor{DarkBackground}
 \mymulticolumn{1}{x{5.377cm}}{\bf\textcolor{white}{Inspecting Packages}}  \tn
-% Row 0
+
 \SetRowColor{LightBackground}
 \mymulticolumn{1}{x{5.377cm}}{{\bf{\$conan search}} Lists all packages in local cache} \tn 
 
 \SetRowColor{white}
-\mymulticolumn{1}{x{5.377cm}}{{\bf{\$conan search <package\_reference>}} Shows info about package. No info, if no binaries existing} \tn 
-% Row Count 2 (+ 1)
-\hhline{>{\arrayrulecolor{DarkBackground}}-}
+\mymulticolumn{1}{x{5.377cm}}{{\bf{\$conan search <recipe\_reference>}} Shows info about package. No info, if no binaries existing} \tn 
+
 \SetRowColor{LightBackground}
-\mymulticolumn{1}{x{5.377cm}}{{\bf{\$conan info}} Shows dependencies of a package.} \tn 
+\mymulticolumn{1}{x{5.377cm}}{{\bf{\$conan inspect <recipe\_reference>}} Lists available attributes of the package} \tn 
+
+\SetRowColor{white}
+\mymulticolumn{1}{x{5.377cm}}{{\bf{\$conan info}} Shows dependencies of a package} \tn 
 \hhline{>{\arrayrulecolor{DarkBackground}}-}
 \end{tabularx}
 \par\addvspace{1.3em}
@@ -216,26 +183,18 @@ adfad
 \begin{tabularx}{5.377cm}{X}
 	\SetRowColor{DarkBackground}
 	\mymulticolumn{1}{x{5.377cm}}{\bf\textcolor{white}{Working with remotes}}  \tn
-	% Row 0
+
 	\SetRowColor{LightBackground}
-	\mymulticolumn{1}{x{5.377cm}}{{\bf{\$conan upload}} Uploads a package to a remote} \tn 
-	% Row Count 1 (+ 1)
-	% Row 1
-	\SetRowColor{white}
-	\mymulticolumn{1}{x{5.377cm}}{{\bf{\$conan remote list}} shows remote repositories} \tn 
-	% Row Count 2 (+ 1)
-	% Row 2
-	\SetRowColor{LightBackground}
-	\mymulticolumn{1}{x{5.377cm}}{{\bf{conan center}} Default remote repo} \tn 
+	\mymulticolumn{1}{x{5.377cm}}{{\bf{\$conan remote list}} Shows remote repositories} \tn 
 	
 	\SetRowColor{white}
-	\mymulticolumn{1}{x{5.377cm}}{{\bf{conan remote add <remote\_repo\_name> <url>}} Adds a remote repository} \tn 
+	\mymulticolumn{1}{x{5.377cm}}{{\bf{\$conan remote add <remote\_repo\_name> <url>}} Adds a remote repository} \tn 
 	
 	\SetRowColor{LightBackground}
-    \mymulticolumn{1}{x{5.377cm}}{{\bf{conan search -r=<remote\_repo\_name>}} Searches for packages in a remote repo} \tn 
+    \mymulticolumn{1}{x{5.377cm}}{{\bf{\$conan search <recipe\_reference> -r=<remote\_repo\_name>}} Searches for packages in a remote repo} \tn 
 
 	\SetRowColor{white}
-	\mymulticolumn{1}{x{5.377cm}}{{\bf{conan upload <recipe\_reference> --all -r=<remote\_repo\_name> <url>}} Uploads a package to the specified remote repository} \tn 
+	\mymulticolumn{1}{x{5.377cm}}{{\bf{\$conan upload <recipe\_reference> --all -r=<remote\_repo\_name>}} Uploads a package to the specified remote repository} \tn 
 
 	\hhline{>{\arrayrulecolor{DarkBackground}}-}
 \end{tabularx}
@@ -267,18 +226,21 @@ adfad
 	\mymulticolumn{1}{x{5.377cm}}{{\bf{python\_requires}} Calling python code from another recipe or python module} \tn 
 
 	\SetRowColor{white}
-	\mymulticolumn{1}{x{5.377cm}}{{\bf{local cache}} Location on developer machine where conan packages are stored} \tn 
+	\mymulticolumn{1}{x{5.377cm}}{{\bf{local cache}} Location on developer machine where conan packages are stored. Usually "$\sim$/.conan/data"} \tn 
 	
 	\SetRowColor{LightBackground}
-	\mymulticolumn{1}{x{5.377cm}}{{\bf{recipe reference}} Identifies a recipe e.g. pkg/0.1/@user/testing} \tn 
+	\mymulticolumn{1}{x{5.377cm}}{{\bf{recipe reference}} Identifies a recipe e.g. pkg/0.1@user/testing} \tn 
 	
 	\SetRowColor{white}
+	\mymulticolumn{1}{x{5.377cm}}{{\bf{conan center}} Default remote repo} \tn 
+	
+	\SetRowColor{LightBackground}
 	\mymulticolumn{1}{x{5.377cm}}{{\bf{package ID}} Identifies a unique binary. Represented as a hash string which is calculated out of the settings and options} \tn 
 	
-	\SetRowColor{LightBackground}
+	\SetRowColor{white}
 	\mymulticolumn{1}{x{5.377cm}}{{\bf{In-source recipe}} When the recipe and the sources are in the same repo} \tn 
 	
-	\SetRowColor{white}
+	\SetRowColor{LightBackground}
 	\mymulticolumn{1}{x{5.377cm}}{{\bf{Out-of-source recipe}} When the recipe is not in the same repo as the sources} \tn 
 	
 	% Row Count 5 (+ 2)
